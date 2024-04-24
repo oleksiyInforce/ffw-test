@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100%;
+}
+
+.logoWrapper {
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-condensed);
+  font-size: var(--size-title);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.sub1 {
+  font-family: var(--font-condensed);
+  font-size: var(--size-xl);
+  font-weight: var(--weight-medium);
+  line-height: 48px;
+  color: var(--color-white);
+  text-align: center;
+
+  text-transform: uppercase;
+
+  @media screen and (max-width: 576px) {
+    font-size: var(--size-large);
+  }
+}
+
+.sub2 {
+  font-family: var(--font-condensed);
+  font-size: var(--size-xxl);
+  line-height: 48px;
+  font-weight: var(--weight-medium);
+  color: var(--color-white);
+  text-align: center;
+
+  text-transform: uppercase;
+
+  @media screen and (max-width: 576px) {
+    font-size: var(--size-xl);
+  }
+}

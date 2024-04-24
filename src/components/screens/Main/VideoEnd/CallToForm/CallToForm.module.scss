@@ -1,0 +1,60 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 56px;
+
+  .qr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 21px;
+
+    p {
+      text-align: center;
+      line-height: normal;
+    }
+
+    @media screen and (max-width: 576px) {
+      display: none;
+    }
+  }
+
+  .divider {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    font-size: var(--size-normal);
+    font-weight: var(--weight-medium);
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 40%;
+      position: absolute;
+
+      background-color: var(--color-white);
+      bottom: 0;
+      left: 50%;
+    }
+
+    &::before {
+      content: '';
+      width: 1px;
+      height: 40%;
+      position: absolute;
+
+      background-color: var(--color-white);
+      top: 0;
+      left: 50%;
+    }
+
+    @media screen and (max-width: 576px) {
+      display: none;
+    }
+  }
+}

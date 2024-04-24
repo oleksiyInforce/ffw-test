@@ -1,0 +1,57 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+
+  padding: 24px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-white);
+
+  box-sizing: border-box;
+
+  @media screen and (max-width: 576px) {
+    padding: 16px;
+  }
+}
+
+.input {
+  all: unset;
+  width: 100%;
+
+  font-size: var(--size-big);
+  font-weight: var(--weight-normal);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  text-transform: uppercase;
+
+  &::placeholder {
+    color: var(--color-white);
+    text-transform: uppercase;
+
+    &::after {
+      content: '*';
+      color: var(--color-yellow);
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: var(--size-medium);
+  }
+}
+
+.error {
+  color: var(--color-red) !important;
+}
+
+.errorText {
+  position: absolute;
+  bottom: 8px;
+  font-size: var(--size-small);
+  font-weight: var(--weight-normal);
+  color: var(--color-red);
+
+  @media screen and (max-width: 576px) {
+    font-size: var(--size-xs);
+    bottom: 4px;
+  }
+}

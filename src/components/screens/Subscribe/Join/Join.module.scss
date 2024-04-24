@@ -1,0 +1,20 @@
+.text {
+  font-family: var(--font-default);
+  font-size: var(--size-big);
+  font-weight: var(--weight-normal);
+
+  color: var(--color-white);
+
+  text-align: center;
+  line-height: normal;
+
+  margin-bottom: 48px;
+
+  span {
+    color: var(--color-yellow);
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: var(--size-medium);
+  }
+}
