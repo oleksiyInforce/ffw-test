@@ -19,6 +19,13 @@ body {
 }
 
 @font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Lambotype';
   src:
     url('../assets/fonts/Lambotype/Lambotype-Regular.woff') format('woff'),

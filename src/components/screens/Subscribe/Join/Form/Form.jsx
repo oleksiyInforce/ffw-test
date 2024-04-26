@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Input } from 'components/ui/Input/Input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import axios from 'axios';
 
 import styles from './Form.module.scss';
 import { Button } from 'components/ui/Button/Button';
@@ -13,9 +14,16 @@ const scheme = yup.object().shape({
     .string()
     .email('Enter a valid email')
     .required('Email is required')
-    .max(50, 'Email is too long'),
-  name: yup.string().required('Name is required').max(50, 'Name is too long'),
+    .max(50, 'Email is too long')
+    .trim(),
+  name: yup.string().required('Name is required').max(50, 'Name is too long').trim(),
 });
+
+const apiUrl = process.env.REACT_APP_MAILCHIMP_URL;
+const listId = process.env.REACT_APP_MAILCHIMP_LIST_ID;
+const apiKey = process.env.REACT_APP_MAILCHIMP_API_KEY;
+
+const url = `${apiUrl}/lists/${listId}/members?skip_merge_validation=true`;
 
 export const Form = ({ setStep }) => {
   const {
@@ -27,12 +35,24 @@ export const Form = ({ setStep }) => {
     resolver: yupResolver(scheme),
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const subscribeMail = async (data) => {
+    try {
+      const response = await axios.post(
+        url,
+        {
+          email_address: data.email,
+          status: 'pending',
+        },
+        { headers: { Authorization: `Bearer ${apiKey}` } },
+      );
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  const onSubmit = (data) => {
-    // add mailchimp/zoho integration here
-    setIsLoading(true);
-    console.log(data);
+  const onSubmit = async (data) => {
+    await subscribeMail(data);
     setStep('completed');
   };
 

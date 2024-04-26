@@ -28,8 +28,13 @@
 
   @media screen and (max-width: 576px) {
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
     padding: 20px;
+
+    p,
+    a {
+      font-size: var(--size-small);
+    }
   }
 }
 

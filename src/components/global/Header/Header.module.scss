@@ -13,5 +13,13 @@
 
   @media screen and (max-width: 576px) {
     padding: 0 20px;
+
+    justify-content: center;
+
+    .close {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+    }
   }
 }

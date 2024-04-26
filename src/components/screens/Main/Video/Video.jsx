@@ -17,7 +17,6 @@ export const Video = () => {
       const rect = ref.current.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         window.removeEventListener('scroll', onScroll);
-        console.log('isVisible');
         setIsVisible(true);
       }
     };
@@ -44,6 +43,7 @@ export const Video = () => {
         width={'100%'}
         height={'100%'}
         onEnded={handleVideoEnd}
+        className={styles.video}
         config={{
           youtube: {
             playerVars: {

@@ -1,5 +1,4 @@
 import { Container } from 'components/ui/Container/Container';
-import { Paragraph } from 'components/ui/Text/Text';
 import React from 'react';
 
 import styles from './VideoEnd.module.scss';

@@ -64,6 +64,7 @@ export const Header = () => {
                 initial='visible'
                 exit='hidden'
                 transition={{ ease: 'circInOut', duration: 0.2 }}
+                className={styles.close}
               >
                 <Icon name='close' width={48} height={48} onClick={handleClose} />
               </motion.div>

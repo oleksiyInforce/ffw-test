@@ -12,6 +12,8 @@ export const Join = ({ setStep }) => {
         <span>Join the waiting list</span> and stay connected as we fuel up <br /> and build
         something extraordinary.
       </p>
+
+      <p className={styles.title}>Don't shift gears just yet!</p>
       <Form setStep={setStep} />
     </Container>
   );

@@ -4,7 +4,6 @@ import React from 'react';
 import styles from './CallToForm.module.scss';
 import { Icon } from 'components/ui/Icon/Icon';
 import { Paragraph } from 'components/ui/Text/Text';
-import { Link } from 'react-router-dom';
 
 export const CallToForm = () => {
   return (

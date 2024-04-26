@@ -15,6 +15,27 @@
   }
 
   @media screen and (max-width: 576px) {
-    font-size: var(--size-medium);
+    display: none;
+  }
+}
+
+.title {
+  display: none;
+
+  font-family: var(--font-condensed);
+  font-size: var(--size-large-mobile);
+
+  font-weight: var(--weight-bold);
+
+  color: var(--color-white);
+
+  text-transform: uppercase;
+  text-align: center;
+
+  margin-bottom: 48px;
+
+  @media screen and (max-width: 576px) {
+    display: inline;
+    margin-bottom: 24px;
   }
 }

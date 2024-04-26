@@ -3,10 +3,8 @@ import React from 'react';
 import styles from './Input.module.scss';
 
 export const Input = React.forwardRef(({ name, placeholder, onChange, error }, ref) => {
-  console.log(error);
-
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${error && styles.wrapperError}`}>
       <input
         className={`${styles.input} ${error && styles.error}`}
         placeholder={placeholder}

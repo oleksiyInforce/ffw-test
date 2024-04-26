@@ -9,7 +9,14 @@
 }
 
 .logoWrapper {
-  flex: 1;
+  margin-bottom: 80px;
+
+  @media screen and (max-width: 1440px) {
+    img {
+      width: 80%;
+    }
+    margin-bottom: 60px;
+  }
 }
 
 .title {
@@ -18,6 +25,13 @@
   font-weight: var(--weight-bold);
   color: var(--color-white);
   text-align: center;
+
+  margin-bottom: 60px;
+
+  @media screen and (max-width: 1440px) {
+    font-size: calc(var(--size-title) - 30px);
+    margin-bottom: 48px;
+  }
 }
 
 .sub1 {
@@ -29,6 +43,13 @@
   text-align: center;
 
   text-transform: uppercase;
+
+  margin-bottom: 14px;
+
+  @media screen and (max-width: 1440px) {
+    font-size: var(--size-large);
+    margin-bottom: 8px;
+  }
 
   @media screen and (max-width: 576px) {
     font-size: var(--size-large);
@@ -44,6 +65,13 @@
   text-align: center;
 
   text-transform: uppercase;
+
+  margin-bottom: 36px;
+
+  @media screen and (max-width: 1440px) {
+    font-size: var(--size-xl);
+    margin-bottom: 14px;
+  }
 
   @media screen and (max-width: 576px) {
     font-size: var(--size-xl);

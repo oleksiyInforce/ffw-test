@@ -57,4 +57,11 @@
       display: none;
     }
   }
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
+    a {
+      width: 100%;
+    }
+  }
 }
