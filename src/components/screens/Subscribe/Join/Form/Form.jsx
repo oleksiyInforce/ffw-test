@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import styles from './Form.module.scss';
 import { Button } from 'components/ui/Button/Button';
+import { Checkbox } from 'components/ui/Checkbox/Checkbox';
 
 const scheme = yup.object().shape({
   email: yup
@@ -17,6 +18,7 @@ const scheme = yup.object().shape({
     .max(50, 'Email is too long')
     .trim(),
   name: yup.string().required('Name is required').max(50, 'Name is too long').trim(),
+  tos: yup.bool().oneOf([true], 'You must accept the terms and conditions'),
 });
 
 const apiUrl = process.env.REACT_APP_MAILCHIMP_URL;
@@ -24,6 +26,10 @@ const listId = process.env.REACT_APP_MAILCHIMP_LIST_ID;
 const apiKey = process.env.REACT_APP_MAILCHIMP_API_KEY;
 
 const url = `${apiUrl}/lists/${listId}/members?skip_merge_validation=true`;
+
+const headers = {
+  Authorization: 'bearer ' + apiKey,
+};
 
 export const Form = ({ setStep }) => {
   const {
@@ -43,9 +49,8 @@ export const Form = ({ setStep }) => {
           email_address: data.email,
           status: 'pending',
         },
-        { headers: { Authorization: `Bearer ${apiKey}` } },
+        { headers },
       );
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
@@ -61,6 +66,10 @@ export const Form = ({ setStep }) => {
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input placeholder={'enter your name'} {...register('name')} error={errors['name']} />
         <Input placeholder={'enter your email'} {...register('email')} error={errors['email']} />
+        <Checkbox {...register('tos')} error={errors['tos']}>
+          I accept the Terms & Conditions. For more details please review our{' '}
+          <a href='/'>Privacy policy</a> .
+        </Checkbox>
         <div className={styles.buttons}>
           <Button variant='secondary' href={'/'} mw={200}>
             Cancel
@@ -70,10 +79,6 @@ export const Form = ({ setStep }) => {
           </Button>
         </div>
       </form>
-      <p className={styles.gdpr}>
-        We respect your privacy rights. Our compliance with GDPR ensures the security and
-        confidentiality of your information.
-      </p>
     </div>
   );
 };

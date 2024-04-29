@@ -6,7 +6,7 @@ import { Paragraph } from 'components/ui/Text/Text';
 export const Footer = () => {
   return (
     <footer className={styles.wrapper}>
-      <Paragraph>Copyright © 2024 Animoca Brands / Automobili Lamborghini S.p.A</Paragraph>
+      <Paragraph>Copyright © 2024 Automobili Lamborghini S.p.A</Paragraph>
       <div className={styles.right}>
         <Paragraph
           link={
