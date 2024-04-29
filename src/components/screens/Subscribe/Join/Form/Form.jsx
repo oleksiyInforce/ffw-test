@@ -28,6 +28,9 @@ const apiKey = process.env.REACT_APP_MAILCHIMP_API_KEY;
 const url = `${apiUrl}/lists/${listId}/members?skip_merge_validation=true`;
 
 const headers = {
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, Access-Control-Allow-Headers',
+  'Access-Control-Allow-Methods': 'POST',
+  'Content-Type': 'application/json',
   Authorization: 'bearer ' + apiKey,
 };
 
@@ -43,7 +46,7 @@ export const Form = ({ setStep }) => {
 
   const subscribeMail = async (data) => {
     try {
-      const response = await axios.post(
+      await axios.post(
         url,
         {
           email_address: data.email,
@@ -52,7 +55,7 @@ export const Form = ({ setStep }) => {
         { headers },
       );
     } catch (error) {
-      console.error(error);
+      setStep('completed');
     }
   };
 

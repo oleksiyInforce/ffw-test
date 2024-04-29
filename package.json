@@ -1,6 +1,7 @@
 {
   "name": "ffw-main",
   "version": "0.1.0",
+  "proxy": "https://us22.api.mailchimp.com/",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
