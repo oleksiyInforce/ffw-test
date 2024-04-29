@@ -21,17 +21,10 @@ const scheme = yup.object().shape({
   tos: yup.bool().oneOf([true], 'You must accept the terms and conditions'),
 });
 
-const apiUrl = process.env.REACT_APP_MAILCHIMP_URL;
-const listId = process.env.REACT_APP_MAILCHIMP_LIST_ID;
-const apiKey = process.env.REACT_APP_MAILCHIMP_API_KEY;
-
-const url = `${apiUrl}/lists/${listId}/members?skip_merge_validation=true`;
+const url = process.env.REACT_APP_MAIL_API;
 
 const headers = {
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization, Access-Control-Allow-Headers',
-  'Access-Control-Allow-Methods': 'POST',
   'Content-Type': 'application/json',
-  Authorization: 'bearer ' + apiKey,
 };
 
 export const Form = ({ setStep }) => {
@@ -47,10 +40,10 @@ export const Form = ({ setStep }) => {
   const subscribeMail = async (data) => {
     try {
       await axios.post(
-        url,
+        `${url}/subscribe`,
         {
-          email_address: data.email,
-          status: 'pending',
+          email: data.email,
+          name: data.name,
         },
         { headers },
       );

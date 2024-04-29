@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.center {
+  text-align: center;
+}
+
 .logoWrapper {
   margin-bottom: 80px;
 
@@ -16,6 +20,13 @@
       width: 80%;
     }
     margin-bottom: 60px;
+  }
+
+  @media screen and (max-width: 576px) {
+    img {
+      width: 100%;
+    }
+    margin-bottom: 30px;
   }
 }
 
@@ -31,6 +42,10 @@
   @media screen and (max-width: 1440px) {
     font-size: calc(var(--size-title) - 30px);
     margin-bottom: 48px;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 28px;
   }
 }
 

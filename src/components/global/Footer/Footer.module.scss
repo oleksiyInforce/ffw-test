@@ -11,6 +11,11 @@
   justify-content: space-between;
   align-items: center;
 
+  p {
+    width: 100%;
+    text-align: left;
+  }
+
   &::before {
     content: '';
     position: absolute;

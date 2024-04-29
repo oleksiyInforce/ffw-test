@@ -18,7 +18,9 @@ export const Hero = () => {
       <h2 className={styles.sub1}>be part of</h2>
       <h2 className={styles.sub2}>something big</h2>
 
-      <Paragraph size='regular'>Register and be the first to receive exclusive updates.</Paragraph>
+      <Paragraph size='regular' className={styles.center}>
+        Register and be the first to receive exclusive updates.
+      </Paragraph>
       <Divider size={64} />
 
       <ScrollDown />

@@ -42,7 +42,7 @@ export const Header = () => {
   const isVideo = step === 'video';
 
   return pathname === '/subscribe' ? (
-    <header className={styles.wrapper}>
+    <header className={`${styles.wrapper} ${styles.subscribe}`}>
       <Icon name='logo' width={64} />
     </header>
   ) : (
