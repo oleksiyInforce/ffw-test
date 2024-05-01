@@ -27,13 +27,13 @@
     z-index: -100;
 
     @media screen and (max-width: 576px) {
-      height: 150px;
+      height: 80px;
     }
   }
 
   @media screen and (max-width: 576px) {
     flex-direction: column;
-    gap: 24px;
+    gap: 14px;
     padding: 20px;
 
     p,

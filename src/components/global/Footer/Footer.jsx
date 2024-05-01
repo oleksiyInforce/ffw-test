@@ -8,20 +8,8 @@ export const Footer = () => {
     <footer className={styles.wrapper}>
       <Paragraph>Copyright © 2024 Automobili Lamborghini S.p.A</Paragraph>
       <div className={styles.right}>
-        <Paragraph
-          link={
-            'https://www.figma.com/file/UjPgtaxILCmJLIFGCDCxPV/Fastforworld_v1?node-id=3%3A14842&mode=dev'
-          }
-        >
-          Terms and Conditions
-        </Paragraph>
-        <Paragraph
-          link={
-            'https://www.figma.com/file/UjPgtaxILCmJLIFGCDCxPV/Fastforworld_v1?node-id=3%3A14842&mode=dev'
-          }
-        >
-          Privacy Policy
-        </Paragraph>
+        <Paragraph link={'/'}>Terms and Conditions</Paragraph>
+        <Paragraph link={'/'}>Privacy Policy</Paragraph>
       </div>
     </footer>
   );

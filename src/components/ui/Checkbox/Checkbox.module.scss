@@ -28,6 +28,10 @@
         height: 12px; /* Same as checkbox height */
       }
     }
+
+    @media screen and (max-width: 576px) {
+      margin: 6px 10px 6px 10px;
+    }
   }
 }
 

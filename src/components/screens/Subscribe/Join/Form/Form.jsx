@@ -71,7 +71,7 @@ export const Form = ({ setStep }) => {
             Cancel
           </Button>
           <Button mw={200} type={'submit'}>
-            register
+            subscribe
           </Button>
         </div>
       </form>

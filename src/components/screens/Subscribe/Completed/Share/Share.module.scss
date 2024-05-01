@@ -28,7 +28,7 @@
 
   a {
     all: unset;
-    cursor: pointer;
+    cursor: pointer !important;
   }
 }
 
@@ -36,4 +36,8 @@
   height: 52px;
   width: 1px;
   background-color: var(--color-white);
+}
+
+.link {
+  cursor: pointer !important;
 }

@@ -4,13 +4,12 @@ import styles from './Hero.module.scss';
 
 import { Container } from 'components/ui/Container/Container';
 import { Icon } from 'components/ui/Icon/Icon';
-import { Divider } from 'components/ui/Divider/Divider';
 import { Paragraph } from 'components/ui/Text/Text';
 import { ScrollDown } from './ScrollDown';
 
 export const Hero = () => {
   return (
-    <Container>
+    <Container className={styles.container}>
       <div className={styles.logoWrapper}>
         <Icon name={'lambo'} width={116} />
       </div>
@@ -21,8 +20,6 @@ export const Hero = () => {
       <Paragraph size='regular' className={styles.center}>
         Register and be the first to receive exclusive updates.
       </Paragraph>
-      <Divider size={64} />
-
       <ScrollDown />
     </Container>
   );

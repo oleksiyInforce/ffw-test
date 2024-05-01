@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { Icon } from 'components/ui/Icon/Icon';
 import { useStep } from '../Provider/Provider';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
@@ -43,7 +43,9 @@ export const Header = () => {
 
   return pathname === '/subscribe' ? (
     <header className={`${styles.wrapper} ${styles.subscribe}`}>
-      <Icon name='logo' width={64} />
+      <Link to={'/'}>
+        <Icon name='logo' width={64} className={styles.logo} />
+      </Link>
     </header>
   ) : (
     <AnimatePresence>
@@ -56,7 +58,9 @@ export const Header = () => {
           className={styles.wrapper}
           transition={{ ease: 'circInOut' }}
         >
-          <Icon name='logo' width={64} />
+          <Link to={'/'}>
+            <Icon name='logo' width={64} className={styles.logo} />
+          </Link>
           <AnimatePresence>
             {isVideo && (
               <motion.div
