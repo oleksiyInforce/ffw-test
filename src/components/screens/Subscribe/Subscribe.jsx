@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Completed } from './Completed/Completed';
 import { Join } from './Join/Join';
@@ -12,6 +12,10 @@ const variants = {
 
 export const Subscribe = () => {
   const [step, setStep] = useState('form');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section>

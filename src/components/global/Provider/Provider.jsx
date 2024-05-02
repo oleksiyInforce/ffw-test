@@ -3,14 +3,9 @@ import React, { createContext, useState } from 'react';
 export const StepContext = createContext();
 
 export const StepProvider = ({ children }) => {
-  const [step, setStep] = useState('video');
   const [isMuted, setIsMuted] = useState(true);
 
-  return (
-    <StepContext.Provider value={{ step, setStep, isMuted, setIsMuted }}>
-      {children}
-    </StepContext.Provider>
-  );
+  return <StepContext.Provider value={{ isMuted, setIsMuted }}>{children}</StepContext.Provider>;
 };
 
 export const useStep = () => {
